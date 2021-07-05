@@ -21,13 +21,13 @@ public class SwiftTransportation {
         String [] dataOut = new String[dataInput.length];
 
         for (int i = 0; i < dataInput.length; i++)
-            dataOut[i] = JOptionPane.showInputDialog("Entre com " + dataInput[i]+ ": ");
+            dataOut[i] = JOptionPane.showInputDialog("Enter the following data: " + dataInput[i]+ ": ");
         return dataOut;
     }
 
     public Truck readTruck(){
         String [] values = new String[6];
-        String [] namevalues = {"Make", "Model", "Year", "Mileage", "License Plate", "Fuel Type","Capacity"};
+        String [] namevalues = {"Make", "Model", "Year", "Mileage", "License Plate", "Fuel Type","Capacity (tonne)"};
         values = readData(namevalues);
 
         String make = this.convertString(values[0]);
@@ -44,7 +44,7 @@ public class SwiftTransportation {
 
     public Bus readBus(){
         String [] values = new String [6];
-        String [] namevalues = {"Make", "Model", "Year", "Mileage", "License Plate", "Fuel Type","Passenger"};
+        String [] namevalues = {"Make", "Model", "Year", "Mileage (mi)", "License Plate", "Fuel Type"," Number of Passenger"};
         values = readData(namevalues);
         String make = this.convertString(values[0]);
         String model= this.convertString(values[1]);
@@ -191,7 +191,7 @@ public class SwiftTransportation {
                             "Options:\n" +
                             "1.Truck\n" +
                             "2.Bus\n" +
-                            "1.Car\n" ;
+                            "3.Car\n" ;
                     enter = JOptionPane.showInputDialog(menu + "\n\n");
                     opt2 = this.convertInteger(enter);
                 switch (opt2){
