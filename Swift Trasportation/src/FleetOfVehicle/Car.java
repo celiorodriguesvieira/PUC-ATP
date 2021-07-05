@@ -18,7 +18,9 @@ public class Car extends Vehicle {
 
 
     public String Print(){
-        return ("Make: " + getMake() + " Model: " + getModel() + " Year: " + getYear() + " Mileage: " + getMileage() +
-                " License Plate: " + getLicensePlate() + " Fuel Type: " + getFuelType() + " Endine: " + this.getEndine());
+        String toprint = super.Print();
+        toprint += "Engine : " + this.endine + "\n";
+
+        return toprint;
     }
 }
