@@ -5,11 +5,11 @@ public abstract  class Vehicle  implements Serializable {
     protected String make;
     protected String model;
     protected int year;
-    protected double mileage;
+    protected int mileage;
     protected String licensePlate;
     protected String fuelType;
 
-public Vehicle (String make,String model, int year, double mileage, String licensePlate, String fuelType) {
+public Vehicle (String make,String model, int year, int mileage, String licensePlate, String fuelType) {
     this.make = make;
     this.model = model;
     this.year = year;
@@ -38,11 +38,11 @@ public Vehicle (String make,String model, int year, double mileage, String licen
         return year;
     }
 
-    public double getMileage(){
+    public int getMileage(){
         return mileage;
     }
 
-    public double setMileage(double Mileage) {
+    public int setMileage(int Mileage) {
         return Mileage;
     }
 
@@ -61,7 +61,15 @@ public Vehicle (String make,String model, int year, double mileage, String licen
     }
 
     public String Print(){
-        return ("Make: " + getMake() + " Model: " + getModel() + " Year: " + getYear() + " Mileage: " + getMileage() +
-                " License Plate: " + getLicensePlate() + " Fuel Type: " + getFuelType());
+     String toprint = "";
+
+     toprint += "Make: " + this.make + "\n";
+     toprint += "Model: " + this.model + "\n";
+     toprint += "Year: " + this.year + "\n";
+     toprint += "Mileage: " + this.mileage + "\n";
+     toprint += "License Plate: " + this.licensePlate + "\n";
+     toprint += "Fuel Type: " + this.fuelType + "\n";
+
+     return toprint;
     }
 }

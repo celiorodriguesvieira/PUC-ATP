@@ -3,7 +3,7 @@ package FleetOfVehicle;
 public class Bus extends Vehicle{
     protected int passenger;
 
-    public Bus(String make, String model, int year, double mileage, String licensePlate, String fuelType, int passenger) {
+    public Bus(String value, String make, String model, int year, int mileage, String licensePlate, String fuelType, int passenger) {
         super(make, model, year, mileage, licensePlate, fuelType);
         this.passenger = passenger;
    }
@@ -17,8 +17,9 @@ public class Bus extends Vehicle{
    }
 
    public String Print(){
-        return ("Make: " + getMake() + " Model: " + getModel() + " Year: " + getYear() + " Mileage: " + getMileage() +
-               " License Plate: " + getLicensePlate() + " Fuel Type: " + getFuelType() + " Passenger: " + this.getPassenger());
+       String toprint = super.Print();
+       toprint += "Passeger: " + this.passenger + "\n";
+       return toprint;
    }
 
 }
